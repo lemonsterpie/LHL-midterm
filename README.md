@@ -1,11 +1,11 @@
-# Data Science Midterm Project
+ # Data Science Midterm Project
 
 ## Project/Goals
 
 ## Process
-### (your step 1)
-- (details)
-### (your step 2)
+### Extracting JSON data
+- Looped over all JSON data, filtering records with no listings, loaded and saved to Pandas Dataframe for cleaning 
+### Data Preparation    
 ### (your step 2)
 
 ## Results
