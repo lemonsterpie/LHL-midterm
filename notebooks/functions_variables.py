@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 def encode_tags(df, min_occurrences):
     """Encodes tags into binary columns, filtering out low-frequency ones.
@@ -28,3 +29,4 @@ def encode_tags(df, min_occurrences):
     df = pd.concat([df, tag_df], axis=1)
 
     return df
+
