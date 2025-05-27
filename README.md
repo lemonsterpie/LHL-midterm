@@ -18,8 +18,15 @@ Support Vector Regression (SVR)
 - Loaded the data into a Pandas DataFrame for further cleaning and preprocessing.
 ### Data Preparation  
 ### Handling Missing Data: 
-Removed or imputed missing values to ensure dataset integrity.
-
+- The 4 columns with the most (>70%) missing data were removed, as well as irrelevant columns and rows whre the target is null.
+- Null values for features such as `stories`, `garage`, `beds` etc were imputed with 0
+- Null values for the `year_built` column was imputed based on the `type` column:
+  - there were many entries of `single_family` type, entries were grouped by city, then imputed with the most frequently occuring year for the listing
+  - `land` and `condo` types only had one entry each in the whole dataframe, so null values where imputed according to the single entry
+  - there were only 2 entries of `other` type, and they were removed upon manual inspection of being incomplete
+  - The remaining few entries were imputed by manual search, or removed if manual search yielded no results
+### Encoding Categorical Columns:
+- Encode_tags function was applied with minimum occurance of 
 ### Feature Engineering: 
 Encoded categorical variables like cities and created meaningful numerical features.
 
