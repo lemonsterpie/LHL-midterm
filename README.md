@@ -51,23 +51,29 @@ The goal of this project is to compare various machine learning models, then use
 
 
 ## Results
-Evaluation metrics before feature selection:
+#### Evaluation metrics before feature selection:
 
 ![before](images/eval_scores_before_selection.png)
 
-Evaluation metrics after feature selection:
+#### Evaluation metrics after feature selection:
 
 ![after](images/eval_scores_after_selection.png)
 
-XGBoost feature importances before hyperparameter tuning:
+#### XGBoost feature importances before hyperparameter tuning:
 
 ![features_before](images/feature_importances_before.png)
 
-XGBoost feature importances after hyperparameter tuning:
+#### XGBoost feature importances after hyperparameter tuning:
 
 ![features_after](images/feature_importances_after.png)
 
 Among all the models teseted, the XGBoost model had the best evaluation metrics. It has the lowest Mean Absolute Error, as well as the highest R^2 and adjusted R^2 values. After tuning hyperparameters, the four features that have the most effect on predicting the target are `sqft`, `encoded_city`, `baths`, and `community_security_features`
+
+#### Evaluation metrics before/after hyperparameter tuning:
+
+![eval_final](images/final_eval_scores.png)
+
+After hyperparameter tuning, the best model outputs a lower RMSE and MAE and a slightly lower R^2 value. 
 
 ## Challenges and Limitations 
 ### Data Processing 
