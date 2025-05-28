@@ -1,16 +1,26 @@
  # Data Science Midterm Project
 
-## Project/Goals
-This project aims to predict the selling price of real estate properties using multiple machine learning models. The dataset contains features such as yar built, building ratio, square footage, city encoding, garage availability, number of stores and bedrooms.  The models implmented inclue 
-Linear Regression
+## Project Goals
+The goal of this project is to compare various machine learning models, then use the most best perfoming model to predict the selling price of real estate property listings.  
 
-XGBoost
-
-Random Forest
-
-K-Nearest Neighbors (KNN)
-
-Support Vector Regression (SVR)
+#### Predictive Features:
+- `year_built`
+- `garage`
+- `stories`
+- `beds`
+- `baths`
+- `sqft`
+- `lot_sqft`
+- `city`
+- `state`
+- `tags`
+#### Target variable: sold_price
+#### Models Used:
+- Linear Regression
+- XGBoost
+- Random Forest
+- K-Neighbors Regressor (KNN)
+- Support Vector Regression (SVR)
 
 ## Process
 ### Extracting JSON data
@@ -31,22 +41,29 @@ Support Vector Regression (SVR)
 #### Feature Engineering: 
 - `Total sqft`: sum of `sqft` and `lot_sqft`
 - `building_ratio`: ratio of house sqft to lot sqft, higher ratio = more building area, 0 = all lot no building
-#### Scaling: using sk-learn StandardScaler() on select columns 
-#### Train/Test Split: Divided the dataset using K-Fold 
-#### Scaling & Normalization: Applied scaling to numeric features to improve model performance.
+#### Feature Selection 
+- Used sklearn RFE to recursively select the top 10 features:
+### Model testing 
+- Conducted train/test split before initiating and fitting each model
+- Computed and compared evaluation metrics 
+### Hyperparameter Tuning 
+- Used RandomizedSearchCV to find best hyperparameters for best performing model from step above
 
 
 ## Results
+Evaluation metrics before feature selection:
 
-| Model               | Mean Squared Error | RMSE ($)     | R² Score | Mean Absolute Error ($) | Adjusted R² Score |
-|---------------------|------------------  |--------------|----------|------------------       |----------------|
-| Linear Regression   | 55,286,464,174.43  | N/A          | 0.43     | 151,410.45              | 0.38           |
-| XGBoost             | N/A                | 188,629.67   | 0.61     | 95,876.97               | N/A            |
-| Random Forest       | N/A                | 196,497.12   | 0.57     | 97,171.21               | N/A            |
-| K-Nearest Neighbors | N/A                | 259,243.99   | 0.26     | 145,165.42              | N/A            |
-| Support Vector Reg. | N/A                | 305,003.43   | -0.03    | 190,197.95              | N/A            |
+![before](images/eval_scores_before_selection.png)
 
+Evaluation metrics after feature selection:
 
+![after](images/eval_scores_after_selection.png)
+
+XGBoost feature importances before hyperparameter tuning:
+![features_before](images/feature_imporances_before.png)
+
+XGBoost feature importances after hyperparameter tuning:
+![features_after](images/feature_imporances_after.png)
 
 ## Challenges and Limitations 
 ### Data Processing 
