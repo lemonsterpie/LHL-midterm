@@ -60,10 +60,14 @@ Evaluation metrics after feature selection:
 ![after](images/eval_scores_after_selection.png)
 
 XGBoost feature importances before hyperparameter tuning:
+
 ![features_before](images/feature_importances_before.png)
 
 XGBoost feature importances after hyperparameter tuning:
+
 ![features_after](images/feature_importances_after.png)
+
+Among all the models teseted, the XGBoost model had the best evaluation metrics. It has the lowest Mean Absolute Error, as well as the highest R^2 and adjusted R^2 values. After tuning hyperparameters, the four features that have the most effect on predicting the target are `sqft`, `encoded_city`, `baths`, and `community_security_features`
 
 ## Challenges and Limitations 
 ### Data Processing 
