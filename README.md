@@ -60,10 +60,10 @@ Evaluation metrics after feature selection:
 ![after](images/eval_scores_after_selection.png)
 
 XGBoost feature importances before hyperparameter tuning:
-![features_before](images/feature_imporances_before.png)
+![features_before](images/feature_importances_before.png)
 
 XGBoost feature importances after hyperparameter tuning:
-![features_after](images/feature_imporances_after.png)
+![features_after](images/feature_importances_after.png)
 
 ## Challenges and Limitations 
 ### Data Processing 
